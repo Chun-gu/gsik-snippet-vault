@@ -40,7 +40,7 @@
 - 애플리케이션에서 데이터를 읽는 작업이 많을 때 사용하는 전략
 - 레디스를 cache로 쓸 때 가장 일반적으로 사용
 
-  <div style="display:flex">
+  <div style="display:flex;">
     <image src="./images/look-aside-1.png" style="width:50%"></image>
     <image src="./images/look-aside-2.png" style="width:50%"></image>
   </div>
@@ -434,7 +434,7 @@ persistency 기능을 이용해서 저장된 AOF / RDB 파일은 재시작을 �
 - 실제 저장된 데이터는 적은데 rss 값은 큰 경우 등 차이가 클 때 fragmentation이 크다고 함
   - 주로 삭제되는 키가 많아지면 fragmentation 증가
     - 특정 시점에 피크를 찍고 다시 삭제되는 경우
-    - TTL로 인한 eviction(축출)이 많이 발생하는 경우
+    - TTL로 인한 eviction(축출)이 많이 발생하는 경우  
       <image src="./images/memory-usage.png"></image>
       - 초록색 used 그래프는 폭락했지만 노란색 rss 그래프는 아직 많이 차 있음
     - `CONFIG SET activedefrag yes`
