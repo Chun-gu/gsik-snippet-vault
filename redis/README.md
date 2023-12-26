@@ -40,13 +40,17 @@
 - 애플리케이션에서 데이터를 읽는 작업이 많을 때 사용하는 전략
 - 레디스를 cache로 쓸 때 가장 일반적으로 사용
 
-<div style="display:flex;justify-content:start;">
-  <div style="flex:1 0;">
-    <image src="./images/look-aside-1.png" style="height:300px"></image>
-  </div>
-  <div style="flex:1 0;">
-    <image src="./images/look-aside-2.png" style="height:300px"></image>
-  </div>
+<div>
+  <table>
+    <tr>
+      <td style="padding:0;">
+        <image src="./images/look-aside-1.png" style="display:block;height:300px"></image>
+      </td>
+      <td style="padding:0;">
+        <image src="./images/look-aside-2.png" style="display:block;height:300px"></image>
+      </td>
+    </tr>
+  </table>
 </div>
 
 1. 애플리케이션은 데이터를 찾을 때 cache 먼저 확인
