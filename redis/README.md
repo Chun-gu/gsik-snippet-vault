@@ -40,10 +40,10 @@
 - 애플리케이션에서 데이터를 읽는 작업이 많을 때 사용하는 전략
 - 레디스를 cache로 쓸 때 가장 일반적으로 사용
 
-  <div style="display:flex;">
-    <image src="./images/look-aside-1.png" style="width:50%"></image>
-    <image src="./images/look-aside-2.png" style="width:50%"></image>
-  </div>
+<div style="display:flex;">
+  <image src="./images/look-aside-1.png" style="width:50%"></image>
+  <image src="./images/look-aside-2.png" style="width:50%"></image>
+</div>
 
 1. 애플리케이션은 데이터를 찾을 때 cache 먼저 확인
 2. cache에 데이터가 있으면 cache에서 데이터를 가지고 오는 작업을 반복
