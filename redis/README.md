@@ -41,8 +41,8 @@
 - 레디스를 cache로 쓸 때 가장 일반적으로 사용
 
 <div style="display:flex;">
-  <image src="./images/look-aside-1.png" style="width:50%"></image>
-  <image src="./images/look-aside-2.png" style="width:50%"></image>
+  <image src="./images/look-aside-1.png"></image>
+  <image src="./images/look-aside-2.png"></image>
 </div>
 
 1. 애플리케이션은 데이터를 찾을 때 cache 먼저 확인
