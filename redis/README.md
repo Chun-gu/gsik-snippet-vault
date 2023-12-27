@@ -12,7 +12,7 @@
 
 ### 캐싱이란
 
-<image src="./images/chacing.png"></image>
+<img src="./images/chacing.png"></img>
 
 데이터의 원래 소스보다 더 빠르고 효율적으로 액세스 할 수 있는 임시 데이터 저장소
 
@@ -40,17 +40,9 @@
 - 애플리케이션에서 데이터를 읽는 작업이 많을 때 사용하는 전략
 - 레디스를 cache로 쓸 때 가장 일반적으로 사용
 
-<div>
-  <table>
-    <tr>
-      <td style="padding:0;">
-        <image src="./images/look-aside-1.png" style="display:block;height:300px"></image>
-      </td>
-      <td style="padding:0;">
-        <image src="./images/look-aside-2.png" style="display:block;height:300px"></image>
-      </td>
-    </tr>
-  </table>
+<div style="display:flex;">
+  <img src="./images/look-aside-1.png"></img>
+  <img src="./images/look-aside-2.png"></img>
 </div>
 
 1. 애플리케이션은 데이터를 찾을 때 cache 먼저 확인
@@ -70,7 +62,7 @@
 
 #### 쓰기 전략
 
-<image src="./images/writing-strategies.png" style="width:100%"></image>
+<img src="./images/writing-strategies.png" style="width:100%"></img>
 
 ##### Write-Around
 
@@ -97,7 +89,7 @@
 
 ### 데이터 타입 종류
 
-<image src="./images/redis-data-types.png" style="width:100%"></image>
+<img src="./images/redis-data-types.png" style="width:100%"></img>
 
 #### Strings
 
@@ -145,7 +137,7 @@
 - 단순 증감 연산
 - INCR / INCRBY / INCRBYFLOAT / HINCRBY / HINCRBYFLOAT / ZINCRBY
 - 예시  
-  <image src="./images/string-count.png"></image>
+  <img src="./images/string-count.png"></img>
   - `score:a`라는 `key`에 `SET`으로 `10` 저장
   - `INCR` 함수로 `1` 증가시켜 `11`
   - `INCRBY` 함수로 증가량을 `4`로 지정하면 `15`
@@ -156,7 +148,7 @@
 - 정수로 된 데이터만 카운팅 가능
 
 - 예시  
-  <image src="./images/bit-counting.png"></image>
+  <img src="./images/bit-counting.png"></img>
 
   - 특정 날짜(20210817)에 접속한 유저 수를 세고 싶은 경우, 날짜로 key 하나를 만들어놓고 유저 ID에 해당하는 bit를 1로 올려주는 방식
   - 한 개의 bit로 한 명의 유저를 표현하면 유저가 천만이어도 천만 개의 bit로 표현 가능하며 1.2 메가 바이트 정도밖에 차지하지 않음
@@ -179,7 +171,7 @@
   - 하루 종일 크롤링한 URL의 개수 카운팅
   - 검색 엔진에서 검색된 유니크한 단어의 개수 카운팅
 - 예시  
-  <image src="./images/hll-counting.png"></image>
+  <img src="./images/hll-counting.png"></img>
   - `PFADD`: 데이터 저장
   - `PFCOUNT`: 유니크하게 저장된 값 조회
   - `PFMERGE`: key들을 머지해서 확인  
@@ -192,7 +184,7 @@
 - 자체적으로 제공하는 blocking 기능으로 불필요한 polling 프로세스 방지하는 이벤트 큐로 사용하기 적합
 
 - 예시  
-  <image src="./images/list-messaging.png"></image>
+  <img src="./images/list-messaging.png"></img>
 
   - `Client A`가 `BRPOP`으로 `myqueue`에서 데이터를 꺼내려는데 현재 리스트 안에 데이터가 없어 대기하는 상황
   - 이때 `Client B`가 `hi`라는 값을 넣어주면 `client A`에서 바로 확인 가능
@@ -205,8 +197,8 @@
 
 - 예시
   <div style="display:flex;">
-    <image src="./images/list-messaging-1.png"></image>
-    <image src="./images/list-messaging-2.png"></image>
+    <img src="./images/list-messaging-1.png"></img>
+    <img src="./images/list-messaging-2.png"></img>
   </div>
 
   - 인스타그램, 페이스북, 트위터 등 SNS에는 각 유저별로 타임라인이 존재하고 타임라인에는 팔로우한 사람들의 데이터만 노출됨
@@ -220,7 +212,7 @@
 - append-only: 서버에 로그가 쌓이듯 데이터의 추가만 가능하므로 중간에 데이터가 바뀌지 않음
 - 시간 범위로 검색 / 신규 추가 데이터 수신 / 소비자별 다른 데이터 수신(소비자 그룹)
 - 예시  
-  <image src="./images/streams-messaging.png"></image>
+  <img src="./images/streams-messaging.png"></img>
 
   - `XADD` 커맨드로 `mystream` 키에 데이터 저장
   - `*`: ID를 의미함
@@ -249,7 +241,7 @@
 
 ### AOF - Append Only File
 
-<image src="./images/aof.png"></image>
+<img src="./images/aof.png"></img>
 
 - 데이터를 변경하는 커맨드가 들어오면 커맨드를 그대로 모두 저장
 - `key1`에 `a` 저장 후 `apple`로 변경, `key2`에 `b` 저장 후 삭제한 커맨드 전부 저장
@@ -271,7 +263,7 @@
 
 ### RDB - Redis Database
 
-<image src="./images/rdb.png"></image>
+<img src="./images/rdb.png"></img>
 
 - 스냅샷 방식: 저장 당시의 메모리에 있는 데이터 그대로 사진 찍듯 파일로 저장
 - `key1`에 `apple`이 저장된 데이터만 남아있음
@@ -291,13 +283,11 @@
     ex) `SAVE 900 1`: 900초 동안 한 개 이상의 키 변경 시 RDB 파일 재작성
 - 강력한 내구성이 필요한 경우 RDB, AOF 동시 사용([공식 문서](https://redis.io/docs/management/persistence/#ok-so-what-should-i-use))
 
-persistency 기능을 이용해서 저장된 AOF / RDB 파일은 재시작을 통해서만 복원할 수 있습니다. 이 때 redis.conf 에 지정된 'dir' 경로에 백업파일을 저장해두어야 하며, 'CONFIG GET dir' 커맨드를 이용해서도 디렉토리 경로를 확인할 수 있습니다.
-
 ## 아키텍처
 
 ### Replication
 
-<image src="./images/replication.png"></image>
+<img src="./images/replication.png"></img>
 
 마스터와 레플리카만 존재하는 간단한 구조
 
@@ -313,7 +303,7 @@ persistency 기능을 이용해서 저장된 AOF / RDB 파일은 재시작을 �
 
 ### Sentinel
 
-<image src="./images/sentinel.png"></image>
+<img src="./images/sentinel.png"></img>
 
 마스터와 레플리카 노드 외에 일반 노드들을 모니터링하는 센티널 노드로 구성
 
@@ -328,13 +318,13 @@ persistency 기능을 이용해서 저장된 AOF / RDB 파일은 재시작을 �
     - 과반수 이상의 센티널이 동의해야 페일오버 진행
 
 - NHN의 아키텍처  
-  <image src="./images/nhn.png"></image>  
+  <img src="./images/nhn.png"></img>  
   두 대의 서버에는 일반 레디스와 센티널을 함께,  
   최저 사양의 다른 서버에는 센티널 노드만 올려 사용 중
 
 ### Cluster
 
-<image src="./images/cluster.png"></image>
+<img src="./images/cluster.png"></img>
 
 #### 특성
 
@@ -345,7 +335,7 @@ persistency 기능을 이용해서 저장된 AOF / RDB 파일은 재시작을 �
 
 ### 아키텍처 선택 기준
 
-<image src="./images/decision.png"></image>
+<img src="./images/decision.png"></img>
 
 - HA 기능: 자동 페일오버
 - 샤딩 기능: 서비스 확장을 위한 스케일 아웃
@@ -359,7 +349,7 @@ persistency 기능을 이용해서 저장된 AOF / RDB 파일은 재시작을 �
 
 오래 걸리는 커맨드 실행 하나로 나머지 모든 요청들의 수행 불가 및 대기를 유발하며 이로 인한 빈번한 장애 발생 가능
 
-<image src="./images/forbidden-command.png"></image>
+<img src="./images/forbidden-command.png"></img>
 
 - `keys` => `scan`
 
@@ -401,7 +391,7 @@ persistency 기능을 이용해서 저장된 AOF / RDB 파일은 재시작을 �
 
 - 대규모의 트래픽 환경에서 TTL 값을 너무 작게 설정한 경우 cache stampede 현상 발생 가능
 
-<image src="./images/cache-stampede.png"></image>
+<img src="./images/cache-stampede.png"></img>
 
 - `Look-Aside` 패턴: 레디스에 데이터가 없다는 응답을 받은 애플리케이션이 직접 DB로 데이터 요청한 뒤 이를 다시 레디스에 저장
 - 키가 만료되는 순간, 이 키를 보고 있던 다수의 애플리케이션에 의해 duplicate read, duplicate write 발생
@@ -416,7 +406,7 @@ persistency 기능을 이용해서 저장된 AOF / RDB 파일은 재시작을 �
 
 #### Persistence / 복제 사용시 MaxMemory 설정 주의
 
-<image src="./images/copy-on-write.png"></image>
+<img src="./images/copy-on-write.png"></img>
 
 - RDB 저장 또는 AOF rewrite 시 `fork()`로 자식 프로세스 생성
   - 부모 프로세스: 일반적인 요청을 받아 데이터 처리 계속
@@ -443,7 +433,7 @@ persistency 기능을 이용해서 저장된 AOF / RDB 파일은 재시작을 �
   - 주로 삭제되는 키가 많아지면 fragmentation 증가
     - 특정 시점에 피크를 찍고 다시 삭제되는 경우
     - TTL로 인한 eviction(축출)이 많이 발생하는 경우  
-      <image src="./images/memory-usage.png"></image>
+      <img src="./images/memory-usage.png"></img>
       - 초록색 used 그래프는 폭락했지만 노란색 rss 그래프는 아직 많이 차 있음
     - `CONFIG SET activedefrag yes`
       - `activedefrag`라는 기능을 잠시 defragmentation을 해줘서 도움 됨. 이 값을 항상 켜두기 보다 단편화가 많이 발생했을 때 켜두는 것을 권장([공식 문서 - ACTIVE DEFRAGMENTATION](https://redis.io/docs/management/config-file/) )
